@@ -1,0 +1,50 @@
+# Dependencias (se instalarán dentro del contenedor)
+node_modules/
+vendor/
+
+# Archivos de entorno y configuración sensible
+.env
+.env.backup
+.env.production
+.env.staging
+auth.json
+
+# Cache y archivos temporales de Laravel
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/framework/testing/*
+storage/logs/*.log
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
+
+# Assets compilados (opcional, si los compilas en el Dockerfile)
+public/storage
+public/hot
+public/build
+
+# Herramientas de desarrollo y logs de sistemas
+.git/
+.gitignore
+.gitattributes
+.editorconfig
+.styleci.yml
+.phpunit.result.cache
+phpunit.xml
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.yml
+docker-compose.override.yml
+Dockerfile
+.dockerignore
+
+# Logs de NPM y Composer
+npm-debug.log
+yarn-error.log
+composer.phar
