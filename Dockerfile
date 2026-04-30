@@ -5,9 +5,13 @@ FROM php:8.3-fpm-alpine AS builder
 RUN apk add --no-cache \
     $PHPIZE_DEPS \
     libpng-dev \
+    libwebp-dev \
     libzip-dev \
     icu-dev \
     zlib-dev
+
+# Configurar GD con soporte webp antes de instalar
+RUN docker-php-ext-configure gd --with-webp
 
 RUN docker-php-ext-install pdo_mysql bcmath gd zip intl
 
@@ -20,6 +24,7 @@ RUN apk add --no-cache \
     bash \
     curl \
     libpng \
+    libwebp \
     libzip \
     icu-libs \
     nodejs \
